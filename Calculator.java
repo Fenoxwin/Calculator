@@ -1,4 +1,3 @@
-import javax.management.StringValueExp;
 import java.util.Scanner;
 public class Calculator {
     static Scanner inc = new Scanner(System.in);
@@ -12,12 +11,16 @@ public class Calculator {
                         "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX", "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
                         "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"};
                 input = lal.toString();
+                int ka = 0;
                 switch (input.charAt(j)) {
                     case '+':
                         String[] res = input.split("\\+");
                         res[0] = res[0].replaceAll("\s", "");
                         res[1] = res[1].replaceAll("\s", "");
-                        if (res[2] == null) {
+                        for (int i = 0; i<res.length; i++) {
+                            ka = i;
+                        }
+                        if (ka < 2) {
                             String one = res[0].toString();
                             String two = res[1].toString();
                             boolean ch = false;
@@ -64,14 +67,18 @@ public class Calculator {
                                     System.out.println("throws Exception");
                                 }
                             }
-                        } else {
-                            System.out.println("throws Exception");
+                        }
+                        else {
+                            System.out.println("thrown Exception");
                         }
                     case '-':
                         String[] ser = input.split("\\-");
                         ser[0] = ser[0].replaceAll("\s", "");
                         ser[1] = ser[1].replaceAll("\s", "");
-                        if (ser[2] == null) {
+                        for (int i = 0; i<ser.length; i++) {
+                            ka = i;
+                        }
+                        if (ka < 2) {
                             String three = ser[0].toString();
                             String four = ser[1].toString();
                             boolean cq = false;
@@ -125,7 +132,10 @@ public class Calculator {
                         String[] ers = input.split("\\/");
                         ers[0] = ers[0].replaceAll("\s", "");
                         ers[1] = ers[1].replaceAll("\s", "");
-                        if (ers[2] == null) {
+                        for (int i = 0; i<ers.length; i++) {
+                            ka = i;
+                        }
+                        if (ka < 2) {
                             String five = ers[0].toString();
                             String six = ers[1].toString();
                             boolean ce = false;
@@ -180,7 +190,10 @@ public class Calculator {
                         String[] sre = input.split("\\*");
                         sre[0] = sre[0].replaceAll("\s", "");
                         sre[1] = sre[1].replaceAll("\s", "");
-                        if (sre[2] == null) {
+                        for (int i = 0; i<sre.length; i++) {
+                            ka = i;
+                        }
+                        if (ka < 2) {
                             String seven = sre[0].toString();
                             String eight = sre[1].toString();
                             boolean ct = false;
@@ -239,5 +252,3 @@ public class Calculator {
         System.out.println(calc(inc.nextLine()));
     }
 }
-
-
